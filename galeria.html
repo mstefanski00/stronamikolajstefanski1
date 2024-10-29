@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Galeria</title>
+    <style>
+      body {
+        background-color: #042340;
+        color: white;
+        font-family: "Oswald", sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100vh;
+      }
+      nav {
+        background-color: #a21c3d;
+        padding: 20px;
+        font-size: 175%;
+      }
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0;
+      }
+
+      nav li {
+        margin: 0;
+      }
+
+      nav a {
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+      footer {
+        background: linear-gradient(
+              #ffcc00 10%,
+              #d40000 10%,
+              #d40000 20%,
+              #ffcc00 20%,
+              #ffcc00 30%,
+              #d40000 30%,
+              #d40000 40%,
+              #ffcc00 40%,
+              #ffcc00 50%,
+              #d40000 50%,
+              #d40000 60%,
+              #ffcc00 60%,
+              #ffcc00 70%,
+              #d40000 70%,
+              #d40000 80%,
+              #ffcc00 80%,
+              #ffcc00 90%,
+              #d40000 90%,
+              #d40000 100%
+            )
+            left,
+          linear-gradient(
+              to bottom,
+              #ffcc00 10%,
+              #d40000 10%,
+              #d40000 20%,
+              #ffcc00 20%,
+              #ffcc00 30%,
+              #d40000 30%,
+              #d40000 40%,
+              #ffcc00 40%,
+              #ffcc00 50%,
+              #d40000 50%,
+              #d40000 60%,
+              #ffcc00 60%,
+              #ffcc00 70%,
+              #d40000 70%,
+              #d40000 80%,
+              #ffcc00 80%,
+              #ffcc00 90%,
+              #d40000 90%,
+              #d40000 100%
+            )
+            right,
+          #ffcc00 center;
+        background-size: 25% 100%, 25% 100%, 50% 100%;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        height: 50px;
+        font-size: 30px;
+        color: #042340;
+      }
+      .content {
+        display: flex;
+        max-width: auto;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+        width: 100%;
+        padding: 20px;
+        flex: 1.2;
+      }
+      .gallery img {
+        width: 215px;
+        height: 215px;
+        object-fit: cover;
+        /*width: 100%; 
+          max-width: 200px; 
+          height: auto; /* Zachowanie proporcji */
+        border-radius: 8px;
+      }
+      .gallery-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .description {
+        flex: 2;
+        padding: 20px;
+        border-left: 2px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 215px;
+        text-align: center;
+      }
+      .video {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+      }
+      .video-section p {
+        font-size: 1.2em;
+        color: white;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+      .video-section video {
+        width: 100%;
+        max-width: 640px;
+        border-radius: 8px;
+      }
+      @media only screen and (max-width: 768px) {
+        .gallery {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        nav ul {
+          flex-direction: column;
+        }
+
+        nav li {
+          padding: 10px 0;
+        }
+
+        footer {
+          font-size: 20px;
+        }
+      }
+
+      @media only screen and (max-width: 480px) {
+        .gallery {
+          grid-template-columns: 1fr;
+        }
+
+        nav ul {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        nav li {
+          padding: 5px 0;
+        }
+
+        footer {
+          font-size: 18px;
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+      </ul>
+    </nav>
+    <div class="content">
+      <div class="gallery">
+        <div class="gallery img">
+          <img
+            src="https://scontent-vie1-1.xx.fbcdn.net/v/t39.30808-6/464366451_958686899620065_4711273986128934842_n.jpg?stp=cp6_dst-jpg&_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=-B2Su2pdevMQ7kNvgHDPaAy&_nc_zt=23&_nc_ht=scontent-vie1-1.xx&_nc_gid=A2_sYTzi4-m3p9OZ5IBzKxc&oh=00_AYAxPWfUvVm_f-VYMaGO7t7kxrPCkdF4KysaX_9JVTsC2w&oe=67257A14"
+            alt="Obraz 1"
+          />
+        </div>
+        <div class="gallery img">
+          <img
+            src="https://static01.nyt.com/athletic/uploads/wp/2024/10/27082302/Mbappe-Barca-Image-1.jpeg"
+            alt="Obraz 2"
+          />
+        </div>
+        <div class="gallery img">
+          <img
+            src="https://pbs.twimg.com/media/Ga2Q6GyWwAAeHFb.jpg:large"
+            alt="Obraz 3"
+          />
+        </div>
+        <div class="gallery img">
+          <img
+            src="https://ocdn.eu/sport-images-transforms/1/nJck9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy85MmJlMWM3YTNjMGVhZDNmNWNmNTUzYmQwYzk5NzdjZC5qcGeTlQMAzLTNFqnNDL-VAs0EsADCw5MJpjhmZTk1YwbeAAKhMAGhMQE/lamine-yamal.jpg"
+            alt="Obraz 4"
+          />
+        </div>
+        <div class="gallery img">
+          <img
+            src="https://static01.nyt.com/athletic/uploads/wp/2024/10/25113234/GettyImages-2180068160-scaled.jpg"
+            alt="Obraz 5"
+          />
+        </div>
+        <div class="gallery img">
+          <img
+            src="https://pictures.tribuna.com/image/1cf92a2d-ec74-42ca-a015-8895f0773436?width=1920&quality=70"
+          />
+        </div>
+      </div>
+
+      <div class="description">
+        <h2>Galeria zdjęć z sobotniego meczu</h2>
+        <p>Obok znajdują się zdjęcia bohaterów ostatniego El Clásico.</p>
+      </div>
+    </div>
+    <div class="video-section">
+      <p>
+        Skrót meczu Real Madrid 0 vs 4 FC Barcelona | LaLiga 24/25 MATCHDAY 11
+      </p>
+      <div class="video">
+        <video controls>
+          <source
+            src="REAL MADRID 0 vs 4 FC BARCELONA _ EL CLÁSICO _ LALIGA 2024_25 MD11.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+    </div>
+
+    <footer>
+      <p>Mikołaj Stefański</p>
+    </footer>
+    <script src="javascript.js"></script>
+  </body>
+</html>

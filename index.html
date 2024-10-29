@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Strona główna</title>
+    <style>
+      body {
+        background-color: #042340;
+        color: white;
+        font-family: "Oswald", sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /*min-height: 100vh;*/
+        min-height: auto;
+      }
+
+      nav {
+        background-color: #a21c3d;
+        padding: 20px;
+        font-size: 175%;
+      }
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0;
+      }
+
+      nav li {
+        margin: 0;
+      }
+
+      nav a {
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+      }
+
+      nav a:hover {
+        text-decoration: underline; /* Podkreślenie przy najechaniu */
+      }
+
+      footer {
+        background: linear-gradient(
+              #ffcc00 10%,
+              #d40000 10%,
+              #d40000 20%,
+              #ffcc00 20%,
+              #ffcc00 30%,
+              #d40000 30%,
+              #d40000 40%,
+              #ffcc00 40%,
+              #ffcc00 50%,
+              #d40000 50%,
+              #d40000 60%,
+              #ffcc00 60%,
+              #ffcc00 70%,
+              #d40000 70%,
+              #d40000 80%,
+              #ffcc00 80%,
+              #ffcc00 90%,
+              #d40000 90%,
+              #d40000 100%
+            )
+            left,
+          linear-gradient(
+              to bottom,
+              #ffcc00 10%,
+              #d40000 10%,
+              #d40000 20%,
+              #ffcc00 20%,
+              #ffcc00 30%,
+              #d40000 30%,
+              #d40000 40%,
+              #ffcc00 40%,
+              #ffcc00 50%,
+              #d40000 50%,
+              #d40000 60%,
+              #ffcc00 60%,
+              #ffcc00 70%,
+              #d40000 70%,
+              #d40000 80%,
+              #ffcc00 80%,
+              #ffcc00 90%,
+              #d40000 90%,
+              #d40000 100%
+            )
+            right,
+          #ffcc00 center;
+        background-size: 25% 100%, 25% 100%, 50% 100%;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        height: 50px;
+        font-size: 30px;
+        color: #042340;
+        /*border: 10px solid;*/
+        /* border-image: linear-gradient(90deg, #FFCC00 25%, #D40000 25%, #D40000 50%, #FFCC00 50%, #FFCC00 75%, #D40000 75%) 1; */
+      }
+      /*.content {
+        flex-direction: column;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        position: relative;
+      }*/
+      header {
+        background-color: #042340;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 2.5em;
+      }
+
+      .content {
+        width: 100%;
+        max-width: 1400px;
+        min-height: fit-content;
+        margin: 20px auto;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+      .inner-content {
+        width: 100%;
+        max-width: 800px;
+        margin: auto;
+        text-align: center;
+      }
+      .summary {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .summary h2 {
+        color: #a21c3d;
+      }
+
+      .summary p {
+        font-size: 1.2em;
+        line-height: 1.5;
+      }
+
+      .stats {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #042340;
+        border-radius: 8px;
+        text-align: center;
+        border: 2px solid #a21c3d;
+        margin: 20px auto;
+      }
+
+      .stats h3 {
+        font-size: 1.5em;
+        color: #a21c3d;
+        margin-bottom: 15px;
+      }
+
+      .social-section {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .social-section a {
+        color: #a21c3d;
+        font-size: 1.2em;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      .social-section a:hover {
+        text-decoration: underline;
+      }
+      .team-badges {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        /*padding: 0 10px;*/
+        margin: 20vh 5vh;
+      }
+      .team-badge {
+        text-align: center;
+        font-size: 3em;
+      }
+      .team-badge img {
+        width: 200px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+      .important-events h3 {
+        font-size: 1.5em;
+        color: #a21c3d;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .important-events {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #042340;
+        color: white;
+        text-align: left;
+      }
+      .important-events ul {
+        list-style-type: none;
+        padding-left: 0;
+        font-size: 1.1em;
+      }
+
+      .highlight-actions li {
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 25px;
+      }
+      @media (min-width: 768px) {
+        nav ul {
+          justify-content: space-evenly;
+        }
+        .content {
+          max-width: 80%;
+        }
+        .team-badge img {
+          width: 180px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .content {
+          max-width: 70%;
+        }
+        nav li {
+          font-size: 1.5em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+      </ul>
+    </nav>
+    <header>
+      <h1>Wygrana FC Barcelony nad Realem Madryt</h1>
+      <p>
+        Najważniejsze wydarzenia, analizy i reakcje po emocjonującym meczu El
+        Clásico
+      </p>
+    </header>
+
+    <div class="content">
+      <div class="team-badges">
+        <div class="team-badge">
+          <img
+            src="real-madrid-c-f-logo-svg-vector.svg"
+            alt="Herb Realu Madryt"
+          />
+          <p>0</p>
+        </div>
+        <div class="team-badge">
+          <img src="fc-barcelona-logo-svg-vector.svg" alt="Herb Barcelony" />
+          <p>4</p>
+        </div>
+      </div>
+    </div>
+    <div class="inner-content">
+      <section class="summary">
+        <!--<h2>Podsumowanie Meczu</h2>-->
+        <p>
+          To był koncert gry jednego zespołu. FC Barcelona rozbiła na wyjeździe
+          Real Madryt 4:0 w absolutnym hicie 11. kolejki La Liga. Wszystkie gole
+          Blaugrana strzeliła po zmianie stron, a dubletem popisał się Robert
+          Lewandowski.
+        </p>
+      </section>
+
+      <section class="stats">
+        <h3>Statystyki Meczu</h3>
+        <ul>
+          <li>Posiadanie piłki: 42% - 58%</li>
+          <li>Strzały: 9 - 15</li>
+          <li>Strzały celne: 4 - 7</li>
+          <li>Rzuty wolne: 17 - 15</li>
+          <li>Rzuty rożne: 10 - 3</li>
+          <li>Spalone: 12 - 1</li>
+          <li>Faule: 15 - 17</li>
+          <li>Żółte kartki: 2 - 5</li>
+          <li>Podania: 311 - 452</li>
+          <li>Podania celne: 244 - 380</li>
+        </ul>
+      </section>
+
+      <section class="important-events">
+        <h3>Najważniejsze momenty spotkania</h3>
+        <ul>
+          <li>
+            13' Błąd Pau Cubarsiego i Kylian Mbappe z 35 metrów próbował lobem
+            zaskoczyć Inakiego Penię. Francuz posłał jednak futbolówkę wysoko
+            nad poprzeczką.
+          </li>
+          <li>
+            30' Dwie niezłe próby gości. Najpierw Andrij Łunin sparował na rzut
+            rożny mocny strzał Pedriego zza "szesnastki", a następnie Inigo
+            Martinez nieznacznie "główkował" tuż nad poprzeczką.
+          </li>
+          <li>
+            32' Real przez moment cieszył się z prowadzenia. Do siatki trafił
+            Kylian Mbappe, który sprytną podcinką pokonał Inakiego Penię, po
+            świetnym podaniu Lucasa Vazqueza. Francuz był jednak na minimalnym
+            spalonym i sędzia musiał anulować gola.
+          </li>
+          <li>
+            54' (0:1) Blaugrana na prowadzeniu. Znakomite prostopadłe podanie
+            Marca Casado do Roberta Lewandowskiego. Napastnik uniknął spalonego
+            i w sytuacji sam na sam pokonał Andrija Łunina.
+          </li>
+          <li>
+            56' (0:2) Goście zadali kolejny cios. I znowu w roli głównej
+            wystąpił Robert Lewandowski! Kapitan biało-czerwonych wykorzystał
+            dośrodkowanie Alejandro Balde z lewego skrzydła i kapitalnym
+            uderzeniem głową skompletował dublet.
+          </li>
+          <li>
+            62' Efektowna parada Inakiego Peni. Hiszpan okazał się lepszy w
+            pojedynku z Kylianem Mbappe.
+          </li>
+          <li>
+            66' Jak to nie wpadło?! Robert Lewandowski powinien mieć już
+            hat-tricka, ale zamiast spokojnie skierować piłkę z kilku metrów do
+            praktycznie pustej bramki, uderzył jedynie w słupek.
+          </li>
+          <li>
+            69' Kolejna bardzo dobra okazja zmarnowana przez naszego rodaka.
+            Polak huknął z bliskiej odległości wysoko nad poprzeczką.
+          </li>
+          <li>
+            77' (0:3) Pozamiatane! Tym razem przypomniał o sobie Lamine Yamal.
+            17-latek dostał precyzyjne podanie od Raphinhi i uderzył z
+            niewielkiej odległości nie do obrony dla Andrija Łunina. Ukrainiec
+            nie miał nic do powiedzenia w tej sytuacji.
+          </li>
+          <li>
+            84' (0:4) Raphinha ustalił wynik meczu! Brazylijczyk otrzymał
+            doskonałe, kilkudziesięciometrowe zagranie od Inigo Martineza,
+            wygrał pojedynek z Lucasem Vazquezem i przelobował wychodzącego z
+            bramki golkipera Królewskich.
+          </li>
+          <li>
+            90' Jeszcze jedna próba Kyliana Mbappe, który szukał szczęścia
+            strzałem z ostrego kąta. Do końca czujność po raz kolejny zachował
+            Inaki Penia.
+          </li>
+        </ul>
+      </section>
+
+      <section class="summary">
+        <h2>Podsumowanie Meczu</h2>
+        <p>
+          Barcelona powiększyła przewagę nad swoim odwiecznym rywalem w tabeli
+          La Liga do sześciu punktów. W następnej kolejce ekipa Hansiego Flicka
+          podejmie w derbach miasta RCD Espanyol. Dzień wcześniej podopieczni
+          Carlo Ancelottiego zmierzą się na wyjeździe z Valencia CF.
+        </p>
+      </section>
+
+      <section class="social-section">
+        <p>Śledź nas na mediach społecznościowych!</p>
+        <a href="https://www.facebook.com/">Facebook</a>
+        <a href="https://x.com/">Twitter</a>
+        <a href="https://www.instagram.com/">Instagram</a>
+      </section>
+    </div>
+
+    <footer>
+      <p>Mikołaj Stefański</p>
+    </footer>
+    <script src="javascript.js"></script>
+  </body>
+</html>
